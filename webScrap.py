@@ -17,8 +17,12 @@ setPrice= 2200
 def toCheckPrice():
     page=requests.get(url, headers=headers)
     soup= BeautifulSoup(page.content, 'html.parser')
+
     title=soup.find(id='productTitle').get_text()
-    print(title)
+    product_title=str(title)
+    product_title=product_title.strip()
+    
+    print(product_title)
 
 toCheckPrice()    
 
