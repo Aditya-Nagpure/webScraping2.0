@@ -24,7 +24,13 @@ def toCheckPrice():
     print(product_title)
 
     price = soup.find('span', {'class': 'a-price-whole'}).get_text()
-    print(price)
+    product_price=''
+    for i in price:
+        if i.isnumeric() or i=='.':
+            product_price +=i
+    print(float(product_price))        
+
+    #print(price)
 
 toCheckPrice()    
 
