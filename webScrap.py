@@ -21,8 +21,10 @@ def toCheckPrice():
     title=soup.find(id='productTitle').get_text()
     product_title=str(title)
     product_title=product_title.strip()
-    
     print(product_title)
+
+    price = soup.find('span', {'class': 'a-price-whole'}).get_text()
+    print(price)
 
 toCheckPrice()    
 
