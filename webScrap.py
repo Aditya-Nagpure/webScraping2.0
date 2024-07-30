@@ -26,13 +26,13 @@ def alert_system(product, link):
         print("Email ID or password not set in environment variables.")
         return
 
-    print(f"Using email ID: {email_id}")  # Debugging
-    print(f"Using email pass: {email_pass}")  # Debugging
+    print(f"Using email ID: {email_id}") 
+    print(f"Using email pass: {email_pass}") 
 
     msg = EmailMessage()
     msg['Subject'] = 'Price Drop Alert'
     msg['From'] = email_id
-    msg['To'] = 'adinagpure.9@gmail.com'  # receiver address
+    msg['To'] = 'adinagpure.9@gmail.com' 
     msg.set_content(f'Hey, the price of {product} has dropped!\n{link}')
 
     try:
@@ -69,7 +69,7 @@ def toCheckPrice():
         print("Could not find the product price.")
         return
 
-    if product_price <= 3000:
+    if product_price <= setPrice:
         alert_system(product_title, url)
         print('Alert sent')
     else:
